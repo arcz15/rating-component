@@ -1,0 +1,100 @@
+@use '../constants/variables';
+@use '../constants/mixins';
+
+.rating-component {
+    height: 100%;
+    padding: 2rem 2rem;
+
+    > h1 {
+        color: #FFF;
+        margin-top: 30px;
+    }
+
+    > p {
+        color: variables.$lightGray;
+        margin-top: 12px;
+        font-size: 17px;
+        line-height: 140%;
+    }
+}
+
+.star-icon {
+    @include mixins.flex-full-center;
+    background-color: #262f38;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.rating-buttons {
+    margin-top: 32px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    div {
+        @include mixins.flex-full-center;
+        width: 55px;
+        height: 55px;
+        background-color: #262f38;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 150ms ease-in-out;
+        
+        span {
+            font-size: 17px;
+            margin-top: 2px;
+            color: variables.$lightGray;
+            user-select: none;
+        }
+    }
+
+    div:hover {
+        background-color: variables.$primary;
+        span {
+            color: #fff;
+        }
+    }
+}
+
+.submit-button {
+    margin-top: 32px;
+    width: 100%;
+    height: 45px;
+    border-radius: 45px;
+    outline: none;
+    border: none;
+    background-color: variables.$primary;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+        background-color: #fff;
+        color: variables.$primary;
+    }
+}
+
+.selected {
+    background-color: variables.$lightGray !important;
+    span {
+        color: #fff !important;
+    }
+}
+
+.submitted-appear {
+    animation-name: submitted-appear-animation;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes submitted-appear-animation {
+    from {
+        opacity: 0%;
+    } to {
+        opacity: 100%;
+    }
+}

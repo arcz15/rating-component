@@ -1,0 +1,36 @@
+@use './constants/variables';
+@use './constants/mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    @include mixins.flex-full-center;
+    background-color: variables.$veryDarkBlue;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box {
+    width: 440px;
+    height: 440px;
+    background: #1d242e;
+    border-radius: 33px;
+    font-family: variables.$fontOverpass;
+}
+
+
+.attribution { 
+    font-size: 14px; text-align: center; 
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: variables.$primary;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%); 
+}
